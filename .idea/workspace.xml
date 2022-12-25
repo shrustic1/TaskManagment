@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b7ac16df-f853-4f83-aa8a-4fb212354e29" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/src/main/java/com/example/helloworld/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/src/main/java/com/example/helloworld/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloWorld/src/main/resources/com/example/helloworld/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/src/main/java/ba/unsa/etf/rpr/ExpressionEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/src/test/java/ba/unsa/etf/rpr/ExpressionEvaluatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/classes/ba/unsa/etf/rpr/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/classes/ba/unsa/etf/rpr/ExpressionEvaluator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/rpr-zadaca1-0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/surefire-reports/TEST-ba.unsa.etf.rpr.ExpressionEvaluatorTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/surefire-reports/ba.unsa.etf.rpr.ExpressionEvaluatorTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rpr-zadaca1/target/test-classes/ba/unsa/etf/rpr/ExpressionEvaluatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rpr-t1-z3" beforeDir="false" afterPath="$PROJECT_DIR$/../rpr-t1-z3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rpr-t2-z1" beforeDir="false" afterPath="$PROJECT_DIR$/../rpr-t2-z1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rpr-t3-z1" beforeDir="false" afterPath="$PROJECT_DIR$/../rpr-t3-z1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/out/production/untitled/ba/etf/unsa/rpr/NajduzaRijec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/ba/etf/unsa/rpr/NajduzaRijec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/untitled.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2JNte2ztAmLBK5t2A8SdIapuEVp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Selma/ba/etf/unsa/rpr/IdeaProjects/TaskManagment/src/main/resources"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Selma\ba\etf\unsa\rpr\IdeaProjects\TaskManagment\src\main\resources" />
+      <recent name="C:\Users\Selma\ba\etf\unsa\rpr\IdeaProjects\TaskManagment\src\main\resources\META-INF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="TaskManagment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="TaskManagment" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b7ac16df-f853-4f83-aa8a-4fb212354e29" name="Changes" comment="" />
+      <created>1671930462961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671930462961</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
