@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Tag;
 import ba.unsa.etf.rpr.domain.Task;
+import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.ResultSet;
@@ -63,5 +64,9 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
     @Override
     public List<Task> searchByDeadline(Date deadline) throws MyException{
         return executeQuery("SELECT * FROM Tasks WHERE deadline = ?", new Object[]{deadline});
+    }
+    @Override
+    public List<Task> searchByReporter(User reporter) throws MyException{
+        return executeQuery("SELECT * FROM Tasks WHERE reporter_id = ?", new Object[]{reporter.getId()});
     }
 }
