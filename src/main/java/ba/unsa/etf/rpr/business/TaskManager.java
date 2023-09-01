@@ -16,5 +16,7 @@ public class TaskManager {
     public void update(Task task) throws MyException{
         DaoFactory.taskDao().update(task);
     }
-
+    public List<Task> getAll() throws MyException{
+        return DaoFactory.taskDao().getAll();
+    }
 }
