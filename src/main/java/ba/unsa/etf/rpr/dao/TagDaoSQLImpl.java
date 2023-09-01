@@ -5,6 +5,8 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class TagDaoSQLImpl extends AbstractDao<Tag> implements TagDao{
     private static TagDaoSQLImpl instance = null;
@@ -25,5 +27,12 @@ public class TagDaoSQLImpl extends AbstractDao<Tag> implements TagDao{
         } catch (SQLException e) {
             throw new MyException(e.getMessage(), e);
         }
+    }
+    @Override
+    public Map<String, Object> object2row(Tag object) {
+        Map<String, Object> item = new TreeMap<>();
+        item.put("id", object.getId());
+        item.put("name", object.getName());
+        return item;
     }
 }
