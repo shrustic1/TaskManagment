@@ -1,4 +1,10 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface TagDao {
+import ba.unsa.etf.rpr.domain.Tag;
+import ba.unsa.etf.rpr.exceptions.MyException;
+
+import java.util.List;
+
+public interface TagDao extends Dao<Tag>{
+    List<Tag> searchByTag(String tag) throws MyException;
 }
