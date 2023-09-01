@@ -9,9 +9,9 @@ public class Task {
     private Date date;
     private Date deadline;
     private String status;
-    private int reported_id;
-    private int assignee_id;
-    private int tag_id;
+    private User reporter;
+    private User assignee;
+    private Tag tag;
 
     public int getId() {
         return id;
@@ -37,16 +37,16 @@ public class Task {
         return status;
     }
 
-    public int getReported_id() {
-        return reported_id;
+    public User getReporter() {
+        return reporter;
     }
 
-    public int getAssignee_id() {
-        return assignee_id;
+    public User getAssignee() {
+        return assignee;
     }
 
-    public int getTag_id() {
-        return tag_id;
+    public Tag getTag() {
+        return tag;
     }
 
     public void setId(int id) {
@@ -73,15 +73,4 @@ public class Task {
         this.status = status;
     }
 
-    public void setReported_id(int reported_id) {
-        this.reported_id = reported_id;
-    }
-
-    public void setAssignee_id(int assignee_id) {
-        this.assignee_id = assignee_id;
-    }
-
-    public void setTag_id(int tag_id) {
-        this.tag_id = tag_id;
-    }
 }
