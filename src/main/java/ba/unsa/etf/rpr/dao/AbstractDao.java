@@ -170,4 +170,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
     public T getById(int id) throws MyException{
         return executeQueryUnique("SELECT * FROM " + this.tableName + " WHERE id = ?", new Object[]{id});
     }
+    public List<T> getAll() throws MyException{
+        return executeQuery("SELECT * FROM " + tableName, null);
+    }
 }
