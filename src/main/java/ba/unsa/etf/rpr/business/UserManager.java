@@ -14,6 +14,9 @@ public class UserManager {
     public void delete(int id) throws MyException{
         DaoFactory.userDao().delete(id);
     }
+    public void update(User user) throws MyException{
+        DaoFactory.userDao().update(user);
+    }
 
 
 }
