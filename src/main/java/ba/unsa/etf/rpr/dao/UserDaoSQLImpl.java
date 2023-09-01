@@ -1,4 +1,35 @@
 package ba.unsa.etf.rpr.dao;
 
-public class UserDaoSQLImpl {
+import ba.unsa.etf.rpr.domain.Tag;
+import ba.unsa.etf.rpr.domain.User;
+import ba.unsa.etf.rpr.exceptions.MyException;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
+    private static UserDaoSQLImpl instance = null;
+    private UserDaoSQLImpl(){super("Users");}
+
+    public static UserDao getInstance() {
+        if (instance == null) instance = new UserDaoSQLImpl();
+        return instance;
+    }
+
+    @Override
+    public User row2object(ResultSet rs) throws MyException {
+        try {
+            User user = new User();
+            user.setId(rs.getInt("id"));
+            user.setName(rs.getString("name"));
+            user.setName(rs.getString("surname"));
+            user.setName(rs.getString("email"));
+            user.setName(rs.getString("password"));
+            return user;
+        } catch (SQLException e) {
+            throw new MyException(e.getMessage(), e);
+        }
+    }
 }
