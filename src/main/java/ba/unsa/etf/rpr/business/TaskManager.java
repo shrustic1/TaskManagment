@@ -13,5 +13,8 @@ public class TaskManager {
     public void delete(int id) throws MyException{
         DaoFactory.taskDao().delete(id);
     }
+    public void update(Task task) throws MyException{
+        DaoFactory.taskDao().update(task);
+    }
 
 }
