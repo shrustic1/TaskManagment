@@ -12,5 +12,5 @@ public interface TaskDao extends Dao<Task>{
     List<Task> searchByStatus(String status) throws MyException;
     List<Task> searchByTitle(String title) throws MyException;
     List<Task> searchByDeadline(Date deadline) throws MyException;
-
+    List<Task> searchByReporter(User reporter) throws MyException;
 }
