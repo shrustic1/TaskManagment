@@ -5,4 +5,5 @@ public class DaoFactory {
     private static final TaskDao taskDao = TaskDaoSQLImpl.getInstance();
     private static final TagDao tagDao = TagDaoSQLImpl.getInstance();
 
+    private DaoFactory(){}
 }
