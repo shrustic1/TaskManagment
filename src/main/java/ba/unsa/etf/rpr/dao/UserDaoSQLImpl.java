@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -41,5 +42,9 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         item.put("email", object.getEmail());
         item.put("password", object.getPassword());
         return item;
+    }
+    @Override
+    public List<User> searchByName(String name) throws MyException{
+        return executeQuery("SELECT * FROM Users WHERE name = ?", new Object[]{name});
     }
 }
