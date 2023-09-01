@@ -73,4 +73,8 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
     public List<Task> searchByAssignee(User assignee) throws MyException{
         return executeQuery("SELECT * FROM Tasks WHERE assignee_id = ?", new Object[]{assignee.getId()});
     }
+    @Override
+    public List<Task> searchByTag(Tag tag) throws MyException{
+        return executeQuery("SELECT * FROM Tasks WHERE tag_id = ?", new Object[]{tag.getId()});
+    }
 }
