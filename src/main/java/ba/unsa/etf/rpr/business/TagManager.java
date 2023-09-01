@@ -8,4 +8,7 @@ public class TagManager {
     public void add (Tag tag) throws MyException {
         DaoFactory.tagDao().add(tag);
     }
+    public void delete(int id) throws MyException{
+        DaoFactory.tagDao().delete(id);
+    }
 }
