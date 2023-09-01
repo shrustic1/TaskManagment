@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Idable;
+import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.*;
 import java.util.Properties;
@@ -40,5 +41,6 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
     public static Connection getConnection(){
         return conn;
     }
+    public abstract T row2object(ResultSet rs) throws MyException;
 
 }
