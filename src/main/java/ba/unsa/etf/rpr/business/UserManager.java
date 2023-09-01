@@ -17,6 +17,8 @@ public class UserManager {
     public void update(User user) throws MyException{
         DaoFactory.userDao().update(user);
     }
-
+    public List<User> getAll() throws MyException{
+        return DaoFactory.userDao().getAll();
+    }
 
 }
