@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Tag;
 import ba.unsa.etf.rpr.domain.Task;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.MyException;
@@ -14,4 +15,5 @@ public interface TaskDao extends Dao<Task>{
     List<Task> searchByDeadline(Date deadline) throws MyException;
     List<Task> searchByReporter(User reporter) throws MyException;
     List<Task> searchByAssignee(User assignee) throws MyException;
+    List<Task> searchByTag(Tag tag) throws MyException;
 }
