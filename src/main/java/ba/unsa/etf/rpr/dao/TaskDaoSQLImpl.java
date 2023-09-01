@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -58,5 +59,9 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
     @Override
     public List<Task> searchByTitle(String title) throws MyException{
         return executeQuery("SELECT * FROM Tasks WHERE title = ?", new Object[]{title});
+    }
+    @Override
+    public List<Task> searchByDeadline(Date deadline) throws MyException{
+        return executeQuery("SELECT * FROM Tasks WHERE deadline = ?", new Object[]{deadline});
     }
 }
