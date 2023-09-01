@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface TaskDao extends Dao<Task>{
-
     List<Task> searchByStatus(String status) throws MyException;
     List<Task> searchByTitle(String title) throws MyException;
     List<Task> searchByDeadline(Date deadline) throws MyException;
