@@ -11,4 +11,7 @@ public class TagManager {
     public void delete(int id) throws MyException{
         DaoFactory.tagDao().delete(id);
     }
+    public void update(Tag tag) throws MyException{
+        DaoFactory.tagDao().update(tag);
+    }
 }
