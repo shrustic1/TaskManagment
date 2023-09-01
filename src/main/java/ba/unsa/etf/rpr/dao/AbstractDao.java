@@ -33,5 +33,10 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
             }
         }
     }
+    public AbstractDao(String tableName) {
+        this.tableName = tableName;
+        createConnection();
+    }
+
 
 }
