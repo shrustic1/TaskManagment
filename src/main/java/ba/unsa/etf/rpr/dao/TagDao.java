@@ -6,5 +6,5 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 import java.util.List;
 
 public interface TagDao extends Dao<Tag>{
-    List<Tag> searchByTag(String tag) throws MyException;
+
 }
