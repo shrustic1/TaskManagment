@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.*;
+import java.util.Map;
 import java.util.Properties;
 
 public abstract class AbstractDao<T extends Idable> implements Dao<T>{
@@ -42,5 +43,6 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         return conn;
     }
     public abstract T row2object(ResultSet rs) throws MyException;
+    public abstract Map<String, Object> object2row(T object);
 
 }
