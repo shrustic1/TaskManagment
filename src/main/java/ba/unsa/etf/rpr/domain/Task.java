@@ -73,4 +73,15 @@ public class Task {
         this.status = status;
     }
 
+    public void setReporter(User reporter) {
+        this.reporter = reporter;
+    }
+
+    public void setAssignee(User assignee) {
+        this.assignee = assignee;
+    }
+
+    public void setTag(Tag tag) {
+        this.tag = tag;
+    }
 }
