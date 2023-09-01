@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.domain;
 
-public class Tag {
+public class Tag implements Idable{
     private int id;
     private String name;
 
