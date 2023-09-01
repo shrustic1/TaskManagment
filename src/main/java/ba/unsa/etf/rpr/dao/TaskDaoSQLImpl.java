@@ -55,5 +55,8 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
     public List<Task> searchByStatus(String status) throws MyException{
         return executeQuery("SELECT * FROM Tasks WHERE status = ?", new Object[]{status});
     }
-
+    @Override
+    public List<Task> searchByTitle(String title) throws MyException{
+        return executeQuery("SELECT * FROM Tasks WHERE title = ?", new Object[]{title});
+    }
 }
