@@ -19,7 +19,7 @@ public class App
     private static final TagManager mealManager = new TagManager();
 
     private static final Option addTag = new Option("AddTag","add-tag",false, "Adding new tag to database");
-    private static final Option addSUser = new Option("AddU","add-user",false, "Adding new user to database");
+    private static final Option addUser = new Option("AddU","add-user",false, "Adding new user to database");
     private static final Option addTask = new Option("AddT", "add-task", false, "Adding new task to database");
 
     private static final Option getTags = new Option("GetTag","get-tags",false, "Printing all tags from database");
@@ -27,7 +27,7 @@ public class App
     private static final Option getTasks = new Option("GetT", "get-tasks", false, "Printing all tasks from database");
 
     private static final Option deleteTag = new Option("deleteTag","delete-tag",false,"Deletes a tag from database");
-    private static final Option deleteUsers = new Option("deleteU","delete-user",false,"Deletes an user from database");
+    private static final Option deleteUser = new Option("deleteU","delete-user",false,"Deletes an user from database");
     private static final Option deleteTask = new Option("deleteT","delete-task",false,"Deletes a task from database");
 
     public static void printFormattedOptions(Options options){
@@ -36,6 +36,19 @@ public class App
         helpFormatter.printUsage(printWriter, 150, "java -jar projekat.jar [option] 'something else if needed' ");
         helpFormatter.printOptions(printWriter, 150, options, 2, 7);
         printWriter.close();
+    }
+    public static Options addOptions(){
+        Options options = new Options();
+        options.addOption(addTag);
+        options.addOption(addTask);
+        options.addOption(addUser);
+        options.addOption(getTags);
+        options.addOption(getTasks);
+        options.addOption(getUsers);
+        options.addOption(deleteTag);
+        options.addOption(deleteTask);
+        options.addOption(deleteUser);
+        return options;
     }
     public static void main( String[] args )
     {
