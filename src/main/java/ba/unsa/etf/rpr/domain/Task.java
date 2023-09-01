@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Date;
 
-public class Task {
+public class Task implements Idable{
     private int id;
     private String title;
     private String description;
