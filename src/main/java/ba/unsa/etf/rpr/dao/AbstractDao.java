@@ -4,10 +4,7 @@ import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 public abstract class AbstractDao<T extends Idable> implements Dao<T>{
     private static Connection conn = null;
@@ -71,5 +68,22 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         } else{
             throw new MyException("Object not found.");
         }
+    }
+    private Map.Entry<String, String> prepareInsertParts (Map<String, Object> row){
+        StringBuilder columns = new StringBuilder();
+        StringBuilder questions = new StringBuilder();
+
+        int counter = 0;
+        for (Map.Entry<String, Object> entry : row.entrySet()){
+            counter++;
+            if (entry.getKey().equals("id")) continue;
+            columns.append(entry.getKey());
+            questions.append("?");
+            if (row.size() != counter){
+                columns.append(",");
+                questions.append(",");
+            }
+        }
+        return new AbstractMap.SimpleEntry<>(columns.toString(), questions.toString());
     }
 }
