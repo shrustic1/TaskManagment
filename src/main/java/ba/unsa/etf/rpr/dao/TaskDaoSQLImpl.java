@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -50,4 +51,9 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
         item.put("tag_id", object.getTag().getId());
         return item;
     }
+    @Override
+    public List<Task> searchByStatus(String status) throws MyException{
+        return executeQuery("SELECT * FROM Tasks WHERE status = ?", new Object[]{status});
+    }
+
 }
