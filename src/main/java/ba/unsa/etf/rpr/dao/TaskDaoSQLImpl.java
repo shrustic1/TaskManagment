@@ -36,5 +36,18 @@ public class TaskDaoSQLImpl extends AbstractDao<Task> implements TaskDao{
             throw new MyException(e.getMessage(), e);
         }
     }
-
+    @Override
+    public Map<String, Object> object2row(Task object) {
+        Map<String, Object> item = new TreeMap<>();
+        item.put("id", object.getId());
+        item.put("title", object.getTitle());
+        item.put("description", object.getDescription());
+        item.put("date", object.getDate());
+        item.put("deadline", object.getDeadline());
+        item.put("status", object.getStatus());
+        item.put("reporter_id", object.getReporter().getId());
+        item.put("assignee_id", object.getAssignee().getId());
+        item.put("tag_id", object.getTag().getId());
+        return item;
+    }
 }
