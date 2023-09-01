@@ -37,6 +37,8 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         this.tableName = tableName;
         createConnection();
     }
-
+    public static Connection getConnection(){
+        return conn;
+    }
 
 }
