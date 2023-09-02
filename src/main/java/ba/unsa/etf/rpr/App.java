@@ -50,10 +50,15 @@ public class App
         options.addOption(deleteUser);
         return options;
     }
-    public static Tag searchThroughTags(List<Tag> listOfMeals, String nameOfTag){
+    public static Tag searchThroughTags(List<Tag> listOfTags, String nameOfTag){
         Tag tag = null;
-        tag = listOfMeals.stream().filter(m -> m.getName().toLowerCase().equals(nameOfTag.toLowerCase())).findAny().get();
+        tag = listOfTags.stream().filter(m -> m.getName().toLowerCase().equals(nameOfTag.toLowerCase())).findAny().get();
         return tag;
+    }
+    public static User searchThroughUsers(List<User> listOfUsers, String nameOfUser){
+        User user = null;
+        user = listOfUsers.stream().filter(m -> m.getName().toLowerCase().equals(nameOfUser.toLowerCase())).findAny().get();
+        return user;
     }
     public static void main( String[] args )
     {
