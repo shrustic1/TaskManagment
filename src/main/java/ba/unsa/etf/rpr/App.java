@@ -129,6 +129,8 @@ public class App
             userManager.getAll().forEach(s -> System.out.println(s.getName()));
         } else if(cl.hasOption(getTags.getOpt()) || cl.hasOption(getTags.getLongOpt())){
             tagManager.getAll().forEach(c -> System.out.println(c.getName()));
+        } else if(cl.hasOption(getTasks.getOpt()) || cl.hasOption(getTasks.getLongOpt())){
+            taskManager.getAll().forEach(z -> System.out.println(z.getTitle()));
         }  else {
             printFormattedOptions(options);
             System.exit(-1);
