@@ -10,13 +10,16 @@ import ba.unsa.etf.rpr.exceptions.MyException;
 import org.apache.commons.cli.*;
 
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 
 public class App 
 {
-    private static final UserManager cookManager= new UserManager();
-    private static final TaskManager studentManager = new TaskManager();
-    private static final TagManager mealManager = new TagManager();
+    private static final UserManager userManager= new UserManager();
+    private static final TaskManager taskManager = new TaskManager();
+    private static final TagManager tagManager = new TagManager();
 
     private static final Option addTag = new Option("AddTag","add-tag",false, "Adding new tag to database");
     private static final Option addUser = new Option("AddU","add-user",false, "Adding new user to database");
@@ -60,8 +63,48 @@ public class App
         user = listOfUsers.stream().filter(m -> m.getName().toLowerCase().equals(nameOfUser.toLowerCase())).findAny().get();
         return user;
     }
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static Task searchThroughTasks(List<Task> listOfTasks, String nameOfTask){
+        Task task = null;
+        task = listOfTasks.stream().filter(m -> m.getTitle().toLowerCase().equals(nameOfTask.toLowerCase())).findAny().get();
+        return task;
+    }
+    public static void main( String[] args ) throws ParseException, MyException {
+        Options options = addOptions();
+        CommandLineParser commandLineParser = new DefaultParser();
+        CommandLine cl = commandLineParser.parse(options, args);
+
+        if (cl.hasOption(addTask.getOpt()) || cl.hasOption(addTask.getLongOpt())){
+            User assignee = null;
+            User reporter = null;
+            Tag tag = null;
+            try {
+                tag = searchThroughTags(tagManager.getAll(), cl.getArgList().get(6));
+                assignee = searchThroughUsers(userManager.getAll(), cl.getArgList().get(4));
+                reporter = searchThroughUsers(userManager.getAll(), cl.getArgList().get(5));
+            } catch(Exception e){
+                System.out.println("There is no that tag/user in the list! Try again.");
+                System.exit(1);
+            }
+            try {
+                Task task = new Task();
+                task.setTitle(cl.getArgList().get(0));
+                task.setDescription(cl.getArgList().get(1));
+                task.setDate(Date.valueOf(LocalDate.now()));
+                SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy;HH:mm:ss");
+                task.setDeadline(sf.parse(cl.getArgList().get(2)));
+                task.setStatus(cl.getArgList().get(3));
+                task.setReporter(reporter);
+                task.setAssignee(assignee);
+                task.setTag(tag);
+                taskManager.add(task);
+                System.out.println("Task has been added successfully!");
+            } catch(Exception e){
+                System.out.println("There is already task with same name in database! Try again.");
+                System.exit(1);
+            }
+        } else {
+            printFormattedOptions(options);
+            System.exit(-1);
+        }
     }
 }
