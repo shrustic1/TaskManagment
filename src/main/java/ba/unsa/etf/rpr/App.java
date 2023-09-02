@@ -50,6 +50,11 @@ public class App
         options.addOption(deleteUser);
         return options;
     }
+    public static Tag searchThroughTags(List<Tag> listOfMeals, String nameOfTag){
+        Tag tag = null;
+        tag = listOfMeals.stream().filter(m -> m.getName().toLowerCase().equals(nameOfTag.toLowerCase())).findAny().get();
+        return tag;
+    }
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
