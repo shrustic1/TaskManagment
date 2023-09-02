@@ -25,9 +25,9 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
             User user = new User();
             user.setId(rs.getInt("id"));
             user.setName(rs.getString("name"));
-            user.setName(rs.getString("surname"));
-            user.setName(rs.getString("email"));
-            user.setName(rs.getString("password"));
+            user.setSurname(rs.getString("surname"));
+            user.setEmail(rs.getString("email"));
+            user.setPassword(rs.getString("password"));
             return user;
         } catch (SQLException e) {
             throw new MyException(e.getMessage(), e);
