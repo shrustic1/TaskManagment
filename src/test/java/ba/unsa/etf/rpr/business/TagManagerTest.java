@@ -55,4 +55,16 @@ public class TagManagerTest {
             tagManager.validateTagName(incorrectNameLong);}, "Tag name must be between 3 and 45 chars");
         Assertions.assertEquals("Tag name must be between 3 and 45 chars", quoteException2.getMessage());
     }
+    /**
+     * Adding a new category
+     * @throws MyException
+     */
+    @Test
+    void addNewCategory() throws MyException {
+        Tag newCategory = new Tag("Novi tag");
+        tagManager.add(newCategory);
+
+        Assertions.assertTrue(true);
+        Mockito.verify(tagManager).add(newCategory);
+    }
 }
