@@ -3,7 +3,7 @@ package ba.unsa.etf.rpr.domain;
 public class Tag implements Idable{
     private int id;
     private String name;
-
+    public Tag(){}
     public Tag(String name){
         this.name = name;
     }
