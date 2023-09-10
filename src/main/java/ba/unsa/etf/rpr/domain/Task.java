@@ -13,6 +13,9 @@ public class Task implements Idable{
     private User assignee;
     private Tag tag;
     public Task(){}
+    public Task(int id, String title, String desc, Date date, Date deadline, String status, User assignee, User reporter, Tag tag){
+
+    }
 
     public int getId() {
         return id;

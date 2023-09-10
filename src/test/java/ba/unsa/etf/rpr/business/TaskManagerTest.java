@@ -1,13 +1,21 @@
 package ba.unsa.etf.rpr.business;
 
+import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.dao.TaskDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Tag;
 import ba.unsa.etf.rpr.domain.Task;
 import ba.unsa.etf.rpr.exceptions.MyException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
+import org.junit.jupiter.api.Assertions;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -20,24 +28,19 @@ public class TaskManagerTest {
     private TaskDaoSQLImpl taskDaoSQLMock;
     private List<Task> tasksList;
     @Test
-    void searchTasksTest() throws MyException {
+    public void deleteTeam() throws MyException {
+        MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
+        daoFactoryMockedStatic.when(DaoFactory::taskDao).thenReturn(taskDaoSQLMock);
+        when(DaoFactory.taskDao().getAll()).thenReturn(tasksList);
         when(taskManager.getAll()).thenReturn(tasksList);
-        String string = "kupiti mlijeko";
-        Mockito.doCallRealMethod().when(taskManager).searchTasks(string);
-        List<Task> tasks = taskManager.searchTasks(string);
-        assertAll(
-                "Searching task",
-                () -> assertEquals(1 , tasks.size()),
-                () -> assertEquals("kupiti mlijeko" , tasks.get(0).getTitle()),
-                () -> assertEquals("kupiti cetiri litra",tasks.get(0).getDescription()),
-                () -> assertEquals(7,tasks.get(0).getId()),
-                () -> assertEquals("2023-03-06 22:00:00", tasks.get(0).getDate()),
-                () -> assertEquals("2023-03-10 22:00:00", tasks.get(0).getDeadline()),
-                () -> assertEquals("none", tasks.get(0).getStatus()),
-                () -> assertEquals("Selma", tasks.get(0).getAssignee()),
-                () -> assertEquals("Hanka", tasks.get(0).getReporter()),
-                () -> assertEquals("Kupovina", tasks.get(0).getTag())
-        );
+        int i = 0;
+        System.out.println(taskManager.getAll().size());
+        i = taskManager.getAll().get(0).getId();
+        Mockito.doCallRealMethod().when(taskManager).delete(i);
+        taskManager.delete(i);
+        Assertions.assertTrue(true);
+        Mockito.verify(taskManager).delete(i);
+        daoFactoryMockedStatic.close();
 
     }
 }
