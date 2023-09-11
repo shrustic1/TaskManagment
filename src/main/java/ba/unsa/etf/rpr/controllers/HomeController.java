@@ -16,5 +16,18 @@ public class HomeController {
     @FXML
     public void initialize(){
     }
+    private void openDialog(String title, String file){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(file));
+            //loader.setController(controller);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setTitle(title);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+        }
+    }
 
 }
