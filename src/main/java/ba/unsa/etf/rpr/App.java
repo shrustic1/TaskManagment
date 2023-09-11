@@ -21,5 +21,10 @@ public class App
     private static final TaskManager taskManager = new TaskManager();
     private static final TagManager tagManager = new TagManager();
 
+    private static final Option addTag = new Option("AddTag","add-tag",false, "Adding new tag to database");
+    private static final Option addUser = new Option("AddU","add-user",false, "Adding new user to database");
+    private static final Option addTask = new Option("AddT", "add-task", false, "Adding new task to database");
+
+
 
 }
