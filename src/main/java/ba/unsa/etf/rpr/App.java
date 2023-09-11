@@ -25,6 +25,9 @@ public class App
     private static final Option addUser = new Option("AddU","add-user",false, "Adding new user to database");
     private static final Option addTask = new Option("AddT", "add-task", false, "Adding new task to database");
 
-
+    private static final Option getTags = new Option("GetTag","get-tags",false, "Printing all tags from database");
+    private static final Option getUsers = new Option("GetU","get-users",false, "Printing all users from database");
+    private static final Option getTasks = new Option("GetT", "get-tasks", false, "Printing all tasks from database");
+    
 
 }
