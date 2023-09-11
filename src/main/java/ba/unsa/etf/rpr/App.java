@@ -40,6 +40,19 @@ public class App
         helpFormatter.printOptions(printWriter, 150, options, 2, 7);
         printWriter.close();
     }
+    public static Options addOptions(){
+        Options options = new Options();
+        options.addOption(addTag);
+        options.addOption(addTask);
+        options.addOption(addUser);
+        options.addOption(getTags);
+        options.addOption(getTasks);
+        options.addOption(getUsers);
+        options.addOption(deleteTag);
+        options.addOption(deleteTask);
+        options.addOption(deleteUser);
+        return options;
+    }
 
 
 }
