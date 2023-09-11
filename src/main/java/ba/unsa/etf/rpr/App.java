@@ -125,6 +125,8 @@ public class App
                 System.out.println("There is already tag with same name in database! Try again.");
                 System.exit(1);
             }
+        } else if(cl.hasOption(getUsers.getOpt()) || cl.hasOption(getUsers.getLongOpt())){
+            userManager.getAll().forEach(s -> System.out.println(s.getName()));
         }
 
 }
