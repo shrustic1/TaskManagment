@@ -74,5 +74,16 @@ public class TagController {
         }
     }
 
+    public void deleteTag(ActionEvent event){
+        try {
+            Tag tag = tagsList.getSelectionModel().getSelectedItem();
+            manager.delete(tag.getId());
+            refreshTags();
+            tagsList.getItems().remove(tag); // perf optimization
+        } catch (MyException e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).showAndWait();
+        }
+    }
+
 
 }
