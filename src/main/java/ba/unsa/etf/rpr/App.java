@@ -149,6 +149,24 @@ public class App
                 System.out.println("Try again!");
                 System.exit(1);
             }
+        } else if(cl.hasOption(deleteTag.getOpt()) || cl.hasOption(deleteTag.getLongOpt())){
+            Tag tag = null;
+            try{
+                tag = searchThroughTags(tagManager.getAll(), cl.getArgList().get(0));
+            }
+            catch(Exception e){
+                System.out.println("Such tag is not in the database!");
+                System.exit(1);
+            }
+            try{
+                tagManager.delete(tag.getId());
+                System.out.println("This tag is now removed from the database!");
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Try again!");
+                System.exit(1);
+            }
         }
 
 }
