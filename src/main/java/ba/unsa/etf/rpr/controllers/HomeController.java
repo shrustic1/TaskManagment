@@ -29,5 +29,7 @@ public class HomeController {
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
     }
-
+    public void openTags(ActionEvent actionEvent) {
+        openDialog("Tags","/fxml/tag.fxml");
+    }
 }
