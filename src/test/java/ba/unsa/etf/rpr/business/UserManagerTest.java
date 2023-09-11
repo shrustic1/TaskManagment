@@ -32,7 +32,7 @@ public class UserManagerTest {
     }
 
     /**
-     * tests adding a new driver
+     * tests adding a new user
      * @throws MyException
      */
     @Test
