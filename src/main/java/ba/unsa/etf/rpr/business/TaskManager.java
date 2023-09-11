@@ -19,4 +19,7 @@ public class TaskManager {
     public List<Task> getAll() throws MyException{
         return DaoFactory.taskDao().getAll();
     }
+    public List<Task> searchTasks(String text) throws MyException {
+        return DaoFactory.taskDao().searchByText(text);
+    }
 }
