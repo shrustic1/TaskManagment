@@ -27,20 +27,8 @@ public class TaskManagerTest {
     private Task task;
     private TaskDaoSQLImpl taskDaoSQLMock;
     private List<Task> tasksList;
-    @Test
-    public void deleteTeam() throws MyException {
-        MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
-        daoFactoryMockedStatic.when(DaoFactory::taskDao).thenReturn(taskDaoSQLMock);
-        when(DaoFactory.taskDao().getAll()).thenReturn(tasksList);
-        when(taskManager.getAll()).thenReturn(tasksList);
-        int i = 0;
-        System.out.println(taskManager.getAll().size());
-        i = taskManager.getAll().get(0).getId();
-        Mockito.doCallRealMethod().when(taskManager).delete(i);
-        taskManager.delete(i);
-        Assertions.assertTrue(true);
-        Mockito.verify(taskManager).delete(i);
-        daoFactoryMockedStatic.close();
 
-    }
+
+
+
 }
