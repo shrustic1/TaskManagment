@@ -131,6 +131,24 @@ public class App
             tagManager.getAll().forEach(c -> System.out.println(c.getName()));
         } else if(cl.hasOption(getTasks.getOpt()) || cl.hasOption(getTasks.getLongOpt())){
             taskManager.getAll().forEach(z -> System.out.println(z.getDeadline()));
+        } else if(cl.hasOption(deleteTask.getOpt()) || cl.hasOption(deleteTask.getLongOpt())){
+            Task task = null;
+            try{
+                task = searchThroughTasks(taskManager.getAll(), cl.getArgList().get(0));
+            }
+            catch(Exception e){
+                System.out.println("Such task is not in the database!");
+                System.exit(1);
+            }
+            try{
+                taskManager.delete(task.getId());
+                System.out.println("This task is now removed from the database!");
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Try again!");
+                System.exit(1);
+            }
         }
 
 }
