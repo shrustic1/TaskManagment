@@ -58,6 +58,16 @@ public class App
         tag = listOfTags.stream().filter(m -> m.getName().toLowerCase().equals(nameOfTag.toLowerCase())).findAny().get();
         return tag;
     }
+    public static User searchThroughUsers(List<User> listOfUsers, String nameOfUser){
+        User user = null;
+        user = listOfUsers.stream().filter(m -> m.getName().toLowerCase().equals(nameOfUser.toLowerCase())).findAny().get();
+        return user;
+    }
+    public static Task searchThroughTasks(List<Task> listOfTasks, String nameOfTask){
+        Task task = null;
+        task = listOfTasks.stream().filter(m -> m.getTitle().toLowerCase().equals(nameOfTask.toLowerCase())).findAny().get();
+        return task;
+    }
 
 
 }
