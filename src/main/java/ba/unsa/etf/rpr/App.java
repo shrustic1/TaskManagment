@@ -102,6 +102,19 @@ public class App
                 System.out.println("There is already task with same name in database! Try again.");
                 System.exit(1);
             }
+        } else if (cl.hasOption(addUser.getOpt()) || cl.hasOption(addUser.getLongOpt())){
+            try {
+                User user = new User();
+                user.setName(cl.getArgList().get(0));
+                user.setSurname(cl.getArgList().get(1));
+                user.setEmail(cl.getArgList().get(2));
+                user.setPassword(cl.getArgList().get(3));
+                userManager.add(user);
+                System.out.println("User has been added successfully!");
+            } catch(Exception e){
+                System.out.println("There is already user with same name in database! Try again.");
+                System.exit(1);
+            }
         }
 
 }
