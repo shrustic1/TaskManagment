@@ -32,8 +32,10 @@ public class HomeController {
     public void openTags(ActionEvent actionEvent) {
         openDialog("Tags","/fxml/tag.fxml");
     }
-
     public void openUsers(ActionEvent actionEvent) {
         openDialog("Users","/fxml/user.fxml");
+    }
+    public void openTasks(ActionEvent actionEvent) {
+        openDialog("Tasks","/fxml/task.fxml");
     }
 }
