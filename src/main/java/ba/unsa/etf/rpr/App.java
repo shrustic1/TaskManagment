@@ -115,6 +115,16 @@ public class App
                 System.out.println("There is already user with same name in database! Try again.");
                 System.exit(1);
             }
+        } else if (cl.hasOption(addTag.getOpt()) || cl.hasOption(addTag.getLongOpt())){
+            try {
+                Tag tag = new Tag();
+                tag.setName(cl.getArgList().get(0));
+                tagManager.add(tag);
+                System.out.println("Tag has been added successfully!");
+            } catch(Exception e){
+                System.out.println("There is already tag with same name in database! Try again.");
+                System.exit(1);
+            }
         }
 
 }
