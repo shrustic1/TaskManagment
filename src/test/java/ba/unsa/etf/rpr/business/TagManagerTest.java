@@ -26,5 +26,16 @@ public class TagManagerTest {
     /**
      * This method will be called before each test method
      */
+    @BeforeEach
+    public void initializeObjects() {
+        tagManager = Mockito.mock(TagManager.class);
+        tag = new Tag();
+        tag.setName("Kupovina");
+        tag.setId(50);
+
+        tagDaoSQLMock = Mockito.mock(TagDaoSQLImpl.class);
+        tagsList = new ArrayList<>();
+        tagsList.addAll(Arrays.asList(new Tag("Kupovina"), new Tag("Hitno"), new Tag("Vazno")));
+    }
 
 }
