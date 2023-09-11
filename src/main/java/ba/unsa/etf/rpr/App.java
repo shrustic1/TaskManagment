@@ -167,6 +167,24 @@ public class App
                 System.out.println("Try again!");
                 System.exit(1);
             }
+        } else if(cl.hasOption(deleteUser.getOpt()) || cl.hasOption(deleteUser.getLongOpt())){
+            User user = null;
+            try{
+                user = searchThroughUsers(userManager.getAll(), cl.getArgList().get(0));
+            }
+            catch(Exception e){
+                System.out.println("Such user is not in the database!");
+                System.exit(1);
+            }
+            try{
+                userManager.delete(user.getId());
+                System.out.println("This user is now removed from the database!");
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Try again!");
+                System.exit(1);
+            }
         }
 
 }
