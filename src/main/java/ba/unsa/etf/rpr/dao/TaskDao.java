@@ -15,4 +15,6 @@ public interface TaskDao extends Dao<Task>{
     List<Task> searchByReporter(User reporter) throws MyException;
     List<Task> searchByAssignee(User assignee) throws MyException;
     List<Task> searchByTag(Tag tag) throws MyException;
+    List<Task> searchByText(String text) throws MyException;
+
 }
