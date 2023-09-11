@@ -84,6 +84,17 @@ public class TagController {
             new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).showAndWait();
         }
     }
-
+    public void refreshTags() throws MyException {
+        try {
+            /*List<String> listOfTagsNames = null;
+            List<Tag> listOfTags = manager.getAll();
+            int i=0;
+            for (; i<listOfTags.size(); i++) listOfTagsNames.add(listOfTags.get(i).getName());*/
+            tagsList.setItems(FXCollections.observableList(manager.getAll()));
+            tagsList.refresh();
+        } catch (MyException e) {
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+        }
+    }
 
 }
