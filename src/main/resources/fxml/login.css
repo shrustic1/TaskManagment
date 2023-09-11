@@ -1,0 +1,9 @@
+.poljeNijeIspravno{
+    -fx-background-color: lightpink;
+}
+.poljeJeIspravno{
+    -fx-background-color: yellowgreen;
+}
+#labelaUsername{
+    -fx-background-color: black;
+}
