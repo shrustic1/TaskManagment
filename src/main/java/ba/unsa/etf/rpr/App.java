@@ -68,6 +68,40 @@ public class App
         task = listOfTasks.stream().filter(m -> m.getTitle().toLowerCase().equals(nameOfTask.toLowerCase())).findAny().get();
         return task;
     }
+    public static void main( String[] args ) throws ParseException, MyException {
+        Options options = addOptions();
+        CommandLineParser commandLineParser = new DefaultParser();
+        CommandLine cl = commandLineParser.parse(options, args);
 
+        if (cl.hasOption(addTask.getOpt()) || cl.hasOption(addTask.getLongOpt())){
+            User assignee = null;
+            User reporter = null;
+            Tag tag = null;
+            try {
+                tag = searchThroughTags(tagManager.getAll(), cl.getArgList().get(6));
+                assignee = searchThroughUsers(userManager.getAll(), cl.getArgList().get(4));
+                reporter = searchThroughUsers(userManager.getAll(), cl.getArgList().get(5));
+            } catch(Exception e){
+                System.out.println("There is no that tag/user in the list! Try again.");
+                System.exit(1);
+            }
+            try {
+                Task task = new Task();
+                task.setTitle(cl.getArgList().get(0));
+                task.setDescription(cl.getArgList().get(1));
+                task.setDate(Date.valueOf(LocalDate.now()));
+                SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy;HH:mm:ss");
+                task.setDeadline(sf.parse(cl.getArgList().get(2)));
+                task.setStatus(cl.getArgList().get(3));
+                task.setReporter(reporter);
+                task.setAssignee(assignee);
+                task.setTag(tag);
+                taskManager.add(task);
+                System.out.println("Task has been added successfully!");
+            } catch(Exception e){
+                System.out.println("There is already task with same name in database! Try again.");
+                System.exit(1);
+            }
+        }
 
 }
