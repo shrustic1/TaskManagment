@@ -50,5 +50,29 @@ public class TagController {
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
     }
+    public void addTag(ActionEvent event){
+        try {
+            Tag tag = new Tag();
+            tag.setName(tagName.getText());
+            tag = manager.add(tag);
+            tagsList.getItems().add(tag);
+            tagName.setText("");
+            refreshTags();
+        }catch (MyException e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).show();
+        }
+    }
+
+    public void updateTag(ActionEvent event){
+        try {
+            Tag tag = tagsList.getSelectionModel().getSelectedItem();
+            tag.setName(tagName.getText());
+            tag = manager.update(tag);
+            refreshTags();
+        }catch (MyException e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).show();
+        }
+    }
+
 
 }
