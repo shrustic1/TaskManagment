@@ -185,6 +185,10 @@ public class App
                 System.out.println("Try again!");
                 System.exit(1);
             }
+        } else {
+            printFormattedOptions(options);
+            System.exit(-1);
         }
+    }
 
 }
