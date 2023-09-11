@@ -37,7 +37,7 @@ public class UserManagerTest {
      */
     @Test
     void addNewUserTest() throws MyException {
-        User newUser = new User(56, "Aida","Hrustic", "aidah@gmail.com", "sifra");
+        User newUser = new User("Aida","Hrustic", "aidah@gmail.com", "sifra");
         userManager.add(newUser);
 
         Assertions.assertTrue(true);
