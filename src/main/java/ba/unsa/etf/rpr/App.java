@@ -33,6 +33,13 @@ public class App
     private static final Option deleteUser = new Option("deleteU","delete-user",false,"Deletes an user from database");
     private static final Option deleteTask = new Option("deleteT","delete-task",false,"Deletes a task from database");
 
+    public static void printFormattedOptions(Options options){
+        HelpFormatter helpFormatter = new HelpFormatter();
+        PrintWriter printWriter = new PrintWriter(System.out);
+        helpFormatter.printUsage(printWriter, 150, "java -jar projekat.jar [option] 'something else if needed' ");
+        helpFormatter.printOptions(printWriter, 150, options, 2, 7);
+        printWriter.close();
+    }
 
 
 }
