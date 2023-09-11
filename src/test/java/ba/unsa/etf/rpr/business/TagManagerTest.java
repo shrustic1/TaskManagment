@@ -37,5 +37,28 @@ public class TagManagerTest {
         tagsList = new ArrayList<>();
         tagsList.addAll(Arrays.asList(new Tag("Kupovina"), new Tag("Hitno"), new Tag("Vazno")));
     }
+    @Test
+    void validateTagName() throws MyException {
+        String correctName = "";
+        try {
+            Mockito.doCallRealMethod().when(tagManager).validateTagName(correctName);
+        } catch (MyException e) {
+            //Test will fall if method validateCategoryName(name) throws an exception for correct parameter
+            e.printStackTrace();
+            Assertions.assertTrue(false);
+        }
+
+        String incorrectNameShort = "A";
+        Mockito.doCallRealMethod().when(tagManager).validateTagName(incorrectNameShort);
+        MyException quoteException1 = Assertions.assertThrows(MyException.class, () -> {
+            tagManager.validateTagName(incorrectNameShort);}, "Tag name must be between 3 and 45 chars");
+        assertEquals("Tag name must be between 3 and 45 chars", quoteException1.getMessage());
+
+        String incorrectNameLong = RandomStringUtils.randomAlphabetic(50);
+        Mockito.doCallRealMethod().when(tagManager).validateTagName(incorrectNameLong);
+        MyException quoteException2 = Assertions.assertThrows(MyException.class, () -> {
+            tagManager.validateTagName(incorrectNameLong);}, "Tag name must be between 3 and 45 chars");
+        assertEquals("Tag name must be between 3 and 45 chars", quoteException2.getMessage());
+    }
 
 }
