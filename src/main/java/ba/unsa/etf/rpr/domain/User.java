@@ -6,8 +6,12 @@ public class User implements Idable{
     private String surname;
     private String email;
     private String password;
-    public User(){
-
+    public User(){}
+    public User(String name, String surname, String email, String password){
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
     }
     public User(int id, String name, String surname, String email, String pass){
         this.id = id;
