@@ -127,6 +127,8 @@ public class App
             }
         } else if(cl.hasOption(getUsers.getOpt()) || cl.hasOption(getUsers.getLongOpt())){
             userManager.getAll().forEach(s -> System.out.println(s.getName()));
+        } else if(cl.hasOption(getTags.getOpt()) || cl.hasOption(getTags.getLongOpt())){
+            tagManager.getAll().forEach(c -> System.out.println(c.getName()));
         }
 
 }
