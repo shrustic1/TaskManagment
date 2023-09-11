@@ -24,5 +24,17 @@ public class TagController {
     public TextField tagName;
     private final TagManager manager = new TagManager();
 
-
+    @FXML
+    public void initialize(){
+        try {
+            refreshTags();
+            tagsList.getSelectionModel().selectedItemProperty().addListener((obs, o, n)->{
+                if (n != null){
+                    tagName.setText(n.getName());
+                }
+            });
+        } catch (MyException e) {
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+        }
+    }
 }
